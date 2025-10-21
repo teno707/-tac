@@ -1,0 +1,31 @@
+
+name: cashier
+description: A Flutter Cashier application
+publish_to: 'none' # هذا المشروع خاص ولا ينشر على pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  provider: ^6.0.7
+  sqflite: ^2.2.8+4
+  path_provider: ^2.0.15
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/

@@ -1,0 +1,72 @@
+String nama = litems[index]["nama"].toString();
+String harga = litems[index]["harga"].toString();
+String desc = litems[index]["desc"].toString();
+String img = litems[index]["img"].toString();
+
+bytes = base64.decode(img);
+
+return new Card(
+child: new Column(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+    displayDecodeImage(bytes),
+    new Text(nama),
+    new Text(harga),
+    new Text(desc),
+    ],
+),
+);
+
+===========================================================================================
+
+            new Expanded(
+              child: new Align(
+                alignment: Alignment.bottomCenter,
+                  child: new Container(
+
+                    child: new ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: litems.length,
+                      
+                      itemBuilder: (BuildContext ctx, int index){
+                        String nama = litems[index]["nama"].toString();
+                        String harga = litems[index]["harga"].toString();
+                        String desc = litems[index]["desc"].toString();
+                        String img = litems[index]["img"].toString();
+
+                        bytes = base64.decode(img);
+
+                        new GestureDetector(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              child: Container(
+                                width: 100.0,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: <Widget>[
+                                            displayDecodeImage(bytes),
+                                            new Align(
+                                              alignment: Alignment.bottomLeft,
+                                              child: new Text(nama),
+                                            ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }, // itemBuilder
+                    )
+                  )
+              ),
+            ),
